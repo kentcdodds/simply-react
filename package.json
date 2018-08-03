@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "mdx-deck src/deck.mdx",
+    "start": "mdx-deck deck.mdx",
     "build": "npm run build:site && npm run build:pdf",
-    "build:site": "mdx-deck build src/deck.mdx",
-    "build:pdf": "mdx-deck pdf src/deck.mdx"
+    "build:site": "mdx-deck build deck.mdx",
+    "build:pdf": "mdx-deck pdf deck.mdx"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
