@@ -1,0 +1,18 @@
+{
+  "name": "simply-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck src/deck.mdx",
+    "build": "npm run build:site && npm run build:pdf",
+    "build:site": "mdx-deck build src/deck.mdx",
+    "build:pdf": "mdx-deck pdf src/deck.mdx"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "mdx-deck": "^1.4.2"
+  }
+}
