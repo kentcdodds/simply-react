@@ -16,7 +16,15 @@
   "license": "MIT",
   "devDependencies": {
     "cpy-cli": "^2.0.0",
-    "mdx-deck": "^1.4.2",
-    "rimraf": "^2.6.2"
+    "css-loader": "^1.0.0",
+    "mdx-deck": "^1.5.10",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.21.0"
+  },
+  "dependencies": {
+    "emotion": "^9.2.6",
+    "react-emotion": "^9.2.6",
+    "react-pose": "^2.2.0",
+    "react-transition-group": "^2.4.0"
   }
 }

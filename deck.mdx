@@ -1,4 +1,8 @@
+import 'style-loader!css-loader!./styles.css'
+import {Appear} from 'mdx-deck'
 import {AboutMe} from 'components/about-me'
+import * as Accordions from './components/accordion/implementations'
+import * as Tabs from './components/tabs/implementations'
 
 # Simply React ⚛️
 
@@ -43,6 +47,127 @@ _If you are physically able ❤️ ♿️_
 
 ---
 
+```jsx
+<Accordion items={accordionItems} />
+```
+
+<Accordions.Standard />
+
+---
+
+```jsx
+<Accordion items={accordionItems} above={true} />
+```
+
+<Accordions.Above />
+
+---
+
+```jsx
+<Accordion items={accordionItems} right={true} />
+```
+
+<Accordions.Right />
+
+---
+
+```jsx
+<Accordion items={accordionItems} position="left" />
+```
+
+<Accordions.Left />
+
+---
+
+```jsx
+<Accordion items={accordionItems} position="bottom" single={true} />
+```
+
+<Accordions.Single />
+
+---
+
+```jsx
+<Accordion items={accordionItems} position="bottom" preventClose={true} />
+```
+
+<Accordions.PreventClose />
+
+---
+
+```jsx
+<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} />
+```
+
+<Accordions.SinglePreventClose />
+
+---
+
+```jsx
+<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} tabs={true} />
+```
+
+<Tabs.Standard />
+
+---
+
+<Tabs.Above />
+
+```jsx
+<Tabs items={tabItems} position="top" />
+```
+
+---
+
+```jsx
+const accordionItems = [
+  {
+    title: '🐴',
+    openTitle: '🐎',
+    contents: '...',
+    disabled: false,
+  },
+  // ...
+]
+
+const ui = (
+  <Accordion
+    items={accordionItems}
+    position="below"
+    single={true}
+    preventClose={true}
+    openTrigger="focus"
+    closeTrigger="blur"
+    titleClassName="acc-title"
+    contentsClassName="acc-contents"
+    onTrigger={this.handleTrigger}
+    closeClassName="acc-closed"
+    openClassName="acc-open"
+    renderExpandAllButton={true} // :-(
+    // let your imagination run wild
+  />
+)
+```
+
+<Appear>
+  <div>
+    <img src="public/sob.png" />
+    <div>bundle size/perf 😵</div>
+  </div>
+  <div>
+    <img src="public/sob.png" />
+    <div>maintenance overhead 😖</div>
+  </div>
+  <div>
+    <img src="public/sob.png" />
+    <div>implementation complexity 🐛</div>
+  </div>
+  <div>
+    <img src="public/sob.png" />
+    <div>API complexity 😕</div>
+  </div>
+</Appear>
+
 ---
 
 # Resources
@@ -80,21 +205,28 @@ _If you are physically able ❤️ ♿️_
 
 What if this is all you will ever need?
 
+<Accordions.Standard />
+
+---
+
+# YAGNI
+
+<small>You Ain't Gonna Need It</small>
+
+<img style={{display: 'block', maxWidth: '100%'}} src="public/cost-benefits.jpg" />
+
 ---
 
 # Use patterns that _simplify_ your API
 
-state reducers
-
-control props
-
-providers
-
-compound components
-
-render props
-
-Let's (re)discover more!
+<Appear>
+  <div>state reducers</div>
+  <div>control props</div>
+  <div>providers</div>
+  <div>compound components</div>
+  <div>render props</div>
+  <div>Let's (re)discover more!</div>
+</Appear>
 
 ---
 
