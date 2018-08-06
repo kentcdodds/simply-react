@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "mdx-deck deck.mdx",
+    "prebuild": "rimraf dist",
     "build": "npm run build:site && npm run build:pdf",
     "build:site": "mdx-deck build deck.mdx",
-    "build:pdf": "mdx-deck pdf deck.mdx"
+    "build:pdf": "mdx-deck pdf deck.mdx",
+    "postbuild": "cpy --parents \"public/**\" ./dist"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
   "devDependencies": {
-    "mdx-deck": "^1.4.2"
+    "cpy-cli": "^2.0.0",
+    "mdx-deck": "^1.4.2",
+    "rimraf": "^2.6.2"
   }
 }
