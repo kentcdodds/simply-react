@@ -1,3 +1,27 @@
+.Slide {
+  position: relative;
+}
+
+.react-codemirror2 {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.react-codemirror2:first-child {
+  margin-top: 0;
+}
+
+.react-codemirror2:last-child {
+  margin-bottom: 0;
+}
+
+.CodeMirror {
+  height: unset;
+  margin-bottom: 18px;
+  padding: 14px;
+  font-size: 20px;
+}
+
 pre {
   text-align: left;
 }

@@ -12,15 +12,16 @@ const AccordionButton = styled('button')(
     paddingBottom: 10,
     fontSize: 20,
     border: 'none',
+    backgroundColor: 'unset',
     ':focus': {
       outline: 'none',
-      backgroundColor: '#c9c9c9',
+      backgroundColor: 'rgba(255, 255, 255, 0.4)',
     },
   },
   ({isOpen}) =>
     isOpen
       ? {
-          backgroundColor: '#d9d9d9',
+          backgroundColor: 'rgba(255, 255, 255, 0.2)',
         }
       : null,
 )

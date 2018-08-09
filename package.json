@@ -22,7 +22,9 @@
     "style-loader": "^0.21.0"
   },
   "dependencies": {
+    "codemirror": "^5.39.2",
     "emotion": "^9.2.6",
+    "react-codemirror2": "^5.1.0",
     "react-emotion": "^9.2.6",
     "react-pose": "^2.2.0",
     "react-transition-group": "^2.4.0"

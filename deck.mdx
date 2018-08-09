@@ -1,8 +1,20 @@
+import 'style-loader!css-loader!codemirror/lib/codemirror.css'
+import 'style-loader!css-loader!./cm-night-owl.css'
 import 'style-loader!css-loader!./styles.css'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/jsx/jsx'
 import {Appear} from 'mdx-deck'
 import {AboutMe} from 'components/about-me'
 import * as Accordions from './components/accordion/implementations'
 import * as Tabs from './components/tabs/implementations'
+import {CodeBlock} from './components/code-block'
+import WhiteLayout from './components/white-layout'
+import {aprocalypse} from './components/aprocalypse'
+import {Sob} from './components/sob'
+
+export {default as theme} from './theme'
+
+export default WhiteLayout
 
 # Simply React ⚛️
 
@@ -14,6 +26,8 @@ Component patterns to simplify your reusable components...
 
 ---
 
+export default WhiteLayout
+
 # Please Stand
 
 _If you are physically able ❤️ ♿️_
@@ -21,6 +35,8 @@ _If you are physically able ❤️ ♿️_
 <img width="70px" height="70px" src="public/standard/big-smile.png" />
 
 ---
+
+export default WhiteLayout
 
 # What this talk is
 
@@ -32,6 +48,8 @@ _If you are physically able ❤️ ♿️_
 <img width="70px" height="70px" src="public/standard/smile.png" />
 
 ---
+
+export default WhiteLayout
 
 # What this talk is *not*
 
@@ -47,65 +65,65 @@ _If you are physically able ❤️ ♿️_
 
 ---
 
-```jsx
-<Accordion items={accordionItems} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} />`}
+</CodeBlock>
 
 <Accordions.Standard />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} above={true} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} above={true} />`}
+</CodeBlock>
 
 <Accordions.Above />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} right={true} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} right={true} />`}
+</CodeBlock>
 
 <Accordions.Right />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} position="left" />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} position="left" />`}
+</CodeBlock>
 
 <Accordions.Left />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} position="bottom" single={true} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} position="bottom" single={true} />`}
+</CodeBlock>
 
 <Accordions.Single />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} position="bottom" preventClose={true} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} position="bottom" preventClose={true} />`}
+</CodeBlock>
 
 <Accordions.PreventClose />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} />`}
+</CodeBlock>
 
 <Accordions.SinglePreventClose />
 
 ---
 
-```jsx
-<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} tabs={true} />
-```
+<CodeBlock>
+  {`<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} tabs={true} />`}
+</CodeBlock>
 
 <Tabs.Standard />
 
@@ -113,59 +131,20 @@ _If you are physically able ❤️ ♿️_
 
 <Tabs.Above />
 
-```jsx
-<Tabs items={tabItems} position="top" />
-```
+<CodeBlock>
+  {`<Tabs items={tabItems} position="top" />`}
+</CodeBlock>
 
 ---
 
-```jsx
-const accordionItems = [
-  {
-    title: '🐴',
-    openTitle: '🐎',
-    contents: '...',
-    disabled: false,
-  },
-  // ...
-]
-
-const ui = (
-  <Accordion
-    items={accordionItems}
-    position="below"
-    single={true}
-    preventClose={true}
-    openTrigger="focus"
-    closeTrigger="blur"
-    titleClassName="acc-title"
-    contentsClassName="acc-contents"
-    onTrigger={this.handleTrigger}
-    closeClassName="acc-closed"
-    openClassName="acc-open"
-    renderExpandAllButton={true} // :-(
-    // let your imagination run wild
-  />
-)
-```
+<CodeBlock>{aprocalypse}</CodeBlock>
 
 <Appear>
-  <div>
-    <img src="public/sob.png" />
-    <div>bundle size/perf 😵</div>
-  </div>
-  <div>
-    <img src="public/sob.png" />
-    <div>maintenance overhead 😖</div>
-  </div>
-  <div>
-    <img src="public/sob.png" />
-    <div>implementation complexity 🐛</div>
-  </div>
-  <div>
-    <img src="public/sob.png" />
-    <div>API complexity 😕</div>
-  </div>
+  <div><Sob style={{top: '10%', left: '30%'}}>bundle size/perf 😵</Sob></div>
+  <div><Sob style={{bottom: '30%', right: '40%'}}>maintenance overhead 😖</Sob></div>
+  <div><Sob style={{top: '40%', left: '20%'}}>implementation complexity 🐛</Sob></div>
+  <div><Sob style={{bottom: '10%', left: '30%'}}>API complexity 😕</Sob></div>
+  <div><Sob style={{top: '50%', right: '20%'}} /><Sob style={{top: '20%', left: '50%'}} /></div>
 </Appear>
 
 ---
