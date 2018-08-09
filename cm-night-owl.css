@@ -6,7 +6,7 @@ copied from https://github.com/dawnlabs/carbon/blob/master/lib/custom/themes/nig
 */
 /* basic */
 .CodeMirror.cm-s-night-owl {
-  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-family: 'Dank Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   font-weight: 350;
   color: #abb2bf;
   background-color: #011627;
