@@ -17,9 +17,9 @@
   "devDependencies": {
     "cpy-cli": "^2.0.0",
     "css-loader": "^1.0.0",
-    "mdx-deck": "^1.5.10",
+    "mdx-deck": "^1.5.15",
     "rimraf": "^2.6.2",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.22.1"
   },
   "dependencies": {
     "codemirror": "^5.39.2",
