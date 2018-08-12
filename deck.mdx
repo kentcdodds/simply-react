@@ -3,14 +3,19 @@ import 'style-loader!css-loader!./cm-night-owl.css'
 import 'style-loader!css-loader!./styles.css'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/jsx/jsx'
+import './script.js'
 import {Appear} from 'mdx-deck'
-import {AboutMe} from 'components/about-me'
+import {AboutMe} from './components/about-me'
 import * as Accordions from './components/accordion/implementations'
 import * as Tabs from './components/tabs/implementations'
 import {CodeBlock} from './components/code-block'
 import WhiteLayout from './components/white-layout'
 import {aprocalypse} from './components/aprocalypse'
-import {Sob} from './components/sob'
+import {accordionCode} from './components/accordion-code'
+import {Sobbing} from './components/sob'
+import {DemoSlide} from './components/demo-slide'
+import DemoLayout from './components/demo-layout'
+import {Resources} from './components/resources'
 
 export {default as theme} from './theme'
 
@@ -65,116 +70,133 @@ export default WhiteLayout
 
 ---
 
-<CodeBlock>
-  {`<Accordion items={accordionItems} />`}
-</CodeBlock>
+export default DemoLayout
 
-<Accordions.Standard />
-
----
-
-<CodeBlock>
-  {`<Accordion items={accordionItems} above={true} />`}
-</CodeBlock>
-
-<Accordions.Above />
+<DemoSlide
+  code={`<Accordion items={accordionItems} />`}
+  accordion={<Accordions.Standard />}
+/>
 
 ---
 
-<CodeBlock>
-  {`<Accordion items={accordionItems} right={true} />`}
-</CodeBlock>
+export default DemoLayout
 
-<Accordions.Right />
-
----
-
-<CodeBlock>
-  {`<Accordion items={accordionItems} position="left" />`}
-</CodeBlock>
-
-<Accordions.Left />
+<DemoSlide
+  code={`<Accordion items={accordionItems} above={true} />`}
+  accordion={<Accordions.Above />}
+/>
 
 ---
 
-<CodeBlock>
-  {`<Accordion items={accordionItems} position="bottom" single={true} />`}
-</CodeBlock>
+export default DemoLayout
 
-<Accordions.Single />
-
----
-
-<CodeBlock>
-  {`<Accordion items={accordionItems} position="bottom" preventClose={true} />`}
-</CodeBlock>
-
-<Accordions.PreventClose />
+<DemoSlide
+  code={`<Accordion items={accordionItems} right={true} />`}
+  accordion={<Accordions.Right />}
+/>
 
 ---
 
-<CodeBlock>
-  {`<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} />`}
-</CodeBlock>
+export default DemoLayout
 
-<Accordions.SinglePreventClose />
-
----
-
-<CodeBlock>
-  {`<Accordion items={accordionItems} position="bottom" single={true} preventClose={true} tabs={true} />`}
-</CodeBlock>
-
-<Tabs.Standard />
+<DemoSlide
+  code={`<Accordion items={accordionItems} position="left" />`}
+  accordion={<Accordions.Left />}
+/>
 
 ---
 
-<Tabs.Above />
+export default DemoLayout
 
-<CodeBlock>
-  {`<Tabs items={tabItems} position="top" />`}
-</CodeBlock>
+<DemoSlide
+  code={`
+<Accordion
+  items={accordionItems}
+  position="bottom"
+  single={true}
+/>
+  `}
+  accordion={<Accordions.Single />}
+/>
+
+---
+
+export default DemoLayout
+
+<DemoSlide
+  code={`
+<Accordion
+  items={accordionItems}
+  position="bottom"
+  preventClose={true}
+/>
+  `}
+  accordion={<Accordions.PreventClose />}
+/>
+
+---
+
+export default DemoLayout
+
+<DemoSlide
+  code={`
+<Accordion
+  items={accordionItems}
+  position="bottom"
+  single={true}
+  preventClose={true}
+/>
+  `}
+  accordion={<Accordions.SinglePreventClose />}
+/>
+
+---
+
+export default DemoLayout
+
+<DemoSlide
+  code={`
+<Accordion
+  items={accordionItems}
+  position="bottom"
+  single={true}
+  preventClose={true}
+  tabs={true}
+/>
+  `}
+  accordion={<Tabs.Standard />}
+/>
+
+---
+
+export default DemoLayout
+
+<DemoSlide
+  code={`<Tabs items={tabItems} position="top" />`}
+  accordion={<Tabs.Above />}
+/>
 
 ---
 
 <CodeBlock>{aprocalypse}</CodeBlock>
 
-<Appear>
-  <div><Sob style={{top: '10%', left: '30%'}}>bundle size/perf 😵</Sob></div>
-  <div><Sob style={{bottom: '30%', right: '40%'}}>maintenance overhead 😖</Sob></div>
-  <div><Sob style={{top: '40%', left: '20%'}}>implementation complexity 🐛</Sob></div>
-  <div><Sob style={{bottom: '10%', left: '30%'}}>API complexity 😕</Sob></div>
-  <div><Sob style={{top: '50%', right: '20%'}} /><Sob style={{top: '20%', left: '50%'}} /></div>
-</Appear>
+<Sobbing />
+
+---
+
+<img style={{maxWidth: '100%'}} src="public/what-if.jpg" />
+
+---
+
+export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div>
+
+<CodeBlock style={{fontSize: 14}}>{accordionCode}</CodeBlock>
 
 ---
 
 # Resources
 
-<div
-  style={{
-    display: 'grid',
-    textAlign: 'center',
-    gridTemplateColumns: '1fr 1fr',
-    gridColumnGap: '5%',
-    justifyContent: 'center'
-  }}
->
-  <div style={{display: 'grid', gridGap: '10px'}}>
-    <div style={{display: 'grid', gridGap: '10px'}}>
-      <strong>Learn React 🆓</strong>
-      <a href="http://kcd.im/beginner-react" target="_blank">kcd.im/beginner-react</a>
-    </div>
-    <img style={{maxHeight: 300}} src="public/beginner-react-course.png" />
-  </div>
-  <div style={{display: 'grid', gridGap: '10px'}}>
-    <div style={{display: 'grid', gridGap: '10px'}}>
-      <strong>Level up in React ⚛️</strong>
-      <a href="http://kcd.im/advanced-react" target="_blank">kcd.im/advanced-react</a>
-    </div>
-    <img style={{maxHeight: 300}} src="public/advanced-patterns-course.png" />
-  </div>
-</div>
+<Resources />
 
 <img width="70px" height="70px" src="public/standard/books.png" />
 
@@ -184,7 +206,18 @@ export default WhiteLayout
 
 What if this is all you will ever need?
 
-<Accordions.Standard />
+<div
+  style={{
+    position: 'relative',
+    height: 400,
+    width: 400,
+    margin: 'auto',
+  }}
+>
+  <div style={{position: 'absolute'}}>
+    <Accordions.Standard />
+  </div>
+</div>
 
 ---
 

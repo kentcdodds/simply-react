@@ -112,7 +112,7 @@ copied from https://github.com/dawnlabs/carbon/blob/master/lib/custom/themes/nig
   color: #ecc48d;
 }
 .cm-s-night-owl .cm-string-2 {
-  color: #addb67ff;
+  color: #addb67;
 }
 .cm-s-night-owl .cm-operator {
   color: #c792ea;
@@ -126,4 +126,12 @@ copied from https://github.com/dawnlabs/carbon/blob/master/lib/custom/themes/nig
 }
 .cm-s-night-owl .cm-error {
   color: #e06c75;
+}
+
+.cm-s-night-owl .cm-tag {
+  color: #addb67;
+}
+
+.cm-s-night-owl .cm-tag.cm-bracket {
+  color: #7fdbca;
 }

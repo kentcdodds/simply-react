@@ -6,6 +6,6 @@ export default {
     ...baseTheme.colors,
     text: '#d6deeb',
     background: '#011627',
-    link: '#08f',
+    link: '#addb67',
   },
 }

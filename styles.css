@@ -19,7 +19,10 @@
   height: unset;
   margin-bottom: 18px;
   padding: 14px;
-  font-size: 20px;
+}
+
+.CodeMirror pre {
+  font-variant-ligatures: none;
 }
 
 pre {

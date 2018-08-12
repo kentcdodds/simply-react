@@ -44,8 +44,8 @@ function asImpl(Comp) {
   return () => (
     <div
       style={{
-        width: 500,
-        fontSize: 24,
+        width: 400,
+        fontSize: 18,
         textAlign: 'left',
         margin: 'auto',
       }}
