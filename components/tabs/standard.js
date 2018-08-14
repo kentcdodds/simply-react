@@ -1,39 +1,34 @@
 import React from 'react'
 import {Tabs} from './base'
-import {css, AccordionButton, BelowTabItem} from '../shared'
+import {TabItem, TabItems, TabButtons, TabButton} from '../shared'
 
 function StandardTabs({items}) {
   return (
     <Tabs>
       {({openIndexes, handleItemClick}) => (
         <div>
-          <div {...css({display: 'flex'})}>
+          <TabButtons>
             {items.map((item, index) => (
-              <AccordionButton
-                kye={item.title}
+              <TabButton
+                key={item.title}
                 isOpen={openIndexes.includes(index)}
                 onClick={() => handleItemClick(index)}
               >
                 {item.title}
-              </AccordionButton>
+              </TabButton>
             ))}
-          </div>
-          <div
-            {...css({
-              position: 'relative',
-              minHeight: 120,
-            })}
-          >
+          </TabButtons>
+          <TabItems>
             {items.map((item, index) => (
-              <BelowTabItem
+              <TabItem
                 key={index}
-                pose={openIndexes.includes(index) ? 'open' : 'closed'}
-                {...css({position: 'absolute', overflowY: 'hidden'})}
+                position="below"
+                isOpen={openIndexes.includes(index)}
               >
                 {items[index].contents}
-              </BelowTabItem>
+              </TabItem>
             ))}
-          </div>
+          </TabItems>
         </div>
       )}
     </Tabs>

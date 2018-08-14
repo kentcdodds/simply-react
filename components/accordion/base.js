@@ -42,10 +42,8 @@ class Accordion extends React.Component {
     })
   }
   render() {
-    const {openIndexes} = this.getState()
-    const {children, ...props} = this.props
-    return children({
-      openIndexes,
+    return this.props.children({
+      openIndexes: this.getState().openIndexes,
       handleItemClick: this.handleItemClick,
     })
   }

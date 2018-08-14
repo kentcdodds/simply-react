@@ -8,19 +8,15 @@ function RightAccordion({items, ...props}) {
       {({openIndexes, handleItemClick}) => (
         <div>
           {items.map((item, index) => (
-            <AccordionItem key={item.title} {...css({gridAutoFlow: 'column'})}>
+            <AccordionItem key={item.title} direction="horizontal">
               <AccordionButton
-                {...css({textAlign: 'left', minWidth: 80})}
                 isOpen={openIndexes.includes(index)}
                 onClick={() => handleItemClick(index)}
               >
-                {item.title}{' '}
-                <span>{openIndexes.includes(index) ? '👉' : '👈'}</span>
+                <span>{openIndexes.includes(index) ? '👉' : '👈'}</span>{' '}
+                {item.title}
               </AccordionButton>
-              <AccordionContents
-                {...css({overflowY: 'hidden', textAlign: 'justify'})}
-                pose={openIndexes.includes(index) ? 'open' : 'closed'}
-              >
+              <AccordionContents isOpen={openIndexes.includes(index)}>
                 {item.contents}
               </AccordionContents>
             </AccordionItem>

@@ -1,7 +1,6 @@
 import React from 'react'
 import {Accordion} from './base'
 import {
-  css,
   AccordionButton,
   AccordionItem,
   AccordionContents,
@@ -14,19 +13,15 @@ function PreventCloseAccordion({items, ...props}) {
       {({openIndexes, handleItemClick}) => (
         <div>
           {items.map((item, index) => (
-            <AccordionItem key={item.title}>
+            <AccordionItem key={item.title} direction="vertical">
               <AccordionButton
-                {...css({textAlign: 'left', minWidth: 80})}
                 isOpen={openIndexes.includes(index)}
                 onClick={() => handleItemClick(index)}
               >
                 {item.title}{' '}
-                <span>{openIndexes.includes(index) ? '👇' : '👉'}</span>
+                <span>{openIndexes.includes(index) ? '👇' : '👈'}</span>
               </AccordionButton>
-              <AccordionContents
-                {...css({overflowY: 'hidden', textAlign: 'justify'})}
-                pose={openIndexes.includes(index) ? 'open' : 'closed'}
-              >
+              <AccordionContents isOpen={openIndexes.includes(index)}>
                 {item.contents}
               </AccordionContents>
             </AccordionItem>

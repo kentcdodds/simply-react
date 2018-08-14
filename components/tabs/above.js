@@ -1,38 +1,34 @@
 import React from 'react'
 import {Tabs} from './base'
-import {css, AccordionButton, AboveTabItem} from '../shared'
+import {TabItem, TabItems, TabButtons, TabButton} from '../shared'
 
 function AboveTabs({items}) {
   return (
     <Tabs>
       {({openIndexes, handleItemClick}) => (
         <div>
-          <div
-            {...css({
-              position: 'relative',
-              minHeight: 120,
-            })}
-          >
+          <TabItems>
             {items.map((item, index) => (
-              <AboveTabItem
+              <TabItem
                 key={index}
-                pose={openIndexes.includes(index) ? 'open' : 'closed'}
-                {...css({position: 'absolute', overflowY: 'hidden'})}
+                position="above"
+                isOpen={openIndexes.includes(index)}
               >
                 {items[index].contents}
-              </AboveTabItem>
+              </TabItem>
             ))}
-          </div>
-          <div {...css({display: 'flex'})}>
+          </TabItems>
+          <TabButtons>
             {items.map((item, index) => (
-              <AccordionButton
+              <TabButton
+                key={item.title}
                 isOpen={openIndexes.includes(index)}
                 onClick={() => handleItemClick(index)}
               >
                 {item.title}
-              </AccordionButton>
+              </TabButton>
             ))}
-          </div>
+          </TabButtons>
         </div>
       )}
     </Tabs>
