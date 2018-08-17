@@ -25,7 +25,7 @@ export default WhiteLayout
 
 <FirstSlide
   title="Simply React ⚛️"
-  subtitle="Component patterns to simplify your reusable components..."
+  subtitle="Why you should learn component patterns"
 />
 
 ---
@@ -71,29 +71,26 @@ export default WhiteLayout
 
 export default DemoLayout
 
-<Appear>
-  <DemoSlide
-    code={`<Accordion items={accordionItems} />`}
-    accordion={<Accordions.Standard />}
-  />
-  <div>
-    <div
-      style={{
-        position: 'absolute',
-        bottom: 30,
-        left: 0,
-        width: '100vw',
-        textAlign: 'center',
-        borderRadius: 6,
-        padding: 4,
-        backgroundColor: 'rgba(1,22,39, 0.6)',
-      }}
-    >
-      <div>Theme: Night Owl by Sarah Drasner</div>
-      <div>Font: Dank Mono by Phil Plückthun</div>
-    </div>
-  </div>
-</Appear>
+<DemoSlide
+  code={`<Accordion items={accordionItems} />`}
+  accordion={<Accordions.Standard />}
+/>
+<div
+  style={{
+    fontSize: '0.8em',
+    position: 'absolute',
+    bottom: 50,
+    left: 0,
+    width: '100vw',
+    textAlign: 'center',
+    borderRadius: 6,
+    padding: 4,
+    backgroundColor: 'rgba(1,22,39, 0.6)',
+  }}
+>
+  <div>Theme: Night Owl by Sarah Drasner</div>
+  <div>Font: Dank Mono by Phil Plückthun</div>
+</div>
 
 ```notes
 - Following the lifecycle of an Accordion
@@ -136,8 +133,9 @@ export default DemoLayout
 export default DemoLayout
 
 <DemoSlide
-  code={`<Accordion items={accordionItems} position="left" />`}
+  code={`<Accordion items={accordionItems} left={true} />`}
   accordion={<Accordions.Left />}
+  followCode={`<Accordion items={accordionItems} position="left" />`}
 />
 
 ```notes
@@ -223,16 +221,17 @@ export default DemoLayout
   accordion={<Tabs.Standard />}
 />
 
+<Appear>
+  <div />
+  <div />
+  <img src="public/cry.png" />
+</Appear>
+
 ```notes
 - Write tabs UI in a different method `renderTabs`
 - Cry!
 - New Use Case: Tabs Above
 ```
-
-<Appear>
-  <img src="public/cry.png" />
-  <div />
-</Appear>
 
 ---
 
@@ -244,8 +243,9 @@ export default DemoLayout
 />
 
 <Appear>
-  <img src="public/sob.png" />
   <div />
+  <div />
+  <img src="public/sob.png" />
 </Appear>
 
 ```notes

@@ -9,7 +9,7 @@ export default ({children}) => (
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'start',
-      marginTop: '8%',
+      marginTop: '20px',
     }}
   >
     {children}

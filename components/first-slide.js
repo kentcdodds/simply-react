@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `
 
 const IconImage = styled.img`
@@ -129,8 +130,9 @@ class AboutMe extends React.Component {
         <LogoRow>
           <LinkedIconImage link="http://kcd.im/egghead" name="eggheadio.png" />
           <LinkedIconImage link="http://kcd.im/fem" name="fem.png" />
-          <LinkedIconImage link="http://kcd.im/wme" name="workshopme.png" />
-          <LinkedIconImage link="http://kcd.im/twitch" name="twitch.png" />
+          <a href="https://twitter.com/kentcdodds" style={{fontSize: '2.2em'}}>
+            @kentcdodds
+          </a>
           <LinkedIconImage link="http://kcd.im/gde" name="gde.png" />
           <LinkedIconImage link="http://kcd.im/youtube" name="youtube.png" />
         </LogoRow>
