@@ -31,7 +31,7 @@ export const Resources = () => (
     </div>
     <div style={{display: 'grid', gridGap: '20px'}}>
       <div style={{display: 'grid', gridGap: '10px'}}>
-        <Title>Level up in React ⚛️</Title>
+        <Title>Level up ⚛️</Title>
         <Link href="http://kcd.im/advanced-react">kcd.im/advanced-react</Link>
       </div>
       <img style={{maxHeight: 300}} src="public/advanced-patterns-course.png" />
