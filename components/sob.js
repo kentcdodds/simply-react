@@ -1,5 +1,6 @@
 import React from 'react'
 import {Appear} from 'mdx-deck'
+import {RandomlyPlaced} from './randomly-placed'
 
 export const Sob = ({children, style}) => (
   <div style={{position: 'absolute', zIndex: 2, ...style}}>
@@ -54,7 +55,9 @@ export const Sobbing = () => (
             zIndex: 3,
           }}
         >
-          <img style={{width: '80%'}} src="public/apropcalypse.png" />
+          <a href="https://twitter.com/gurlcode/status/1002110517094371328">
+            <img style={{width: '80%'}} src="public/apropcalypse.png" />
+          </a>
         </div>
       </div>
     </Appear>

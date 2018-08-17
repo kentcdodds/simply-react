@@ -5,6 +5,7 @@ import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/jsx/jsx'
 import './script.js'
 import {Appear} from 'mdx-deck'
+import {FirstSlide} from './components/first-slide'
 import {AboutMe} from './components/about-me'
 import * as Accordions from './components/accordion/implementations'
 import * as Tabs from './components/tabs/implementations'
@@ -13,6 +14,7 @@ import WhiteLayout from './components/white-layout'
 import {aprocalypse} from './components/aprocalypse'
 import {accordionCode} from './components/accordion-code'
 import {Sobbing} from './components/sob'
+import {RandomlyPlaced} from './components/randomly-placed'
 import {DemoSlide} from './components/demo-slide'
 import DemoLayout from './components/demo-layout'
 import {Resources} from './components/resources'
@@ -21,13 +23,10 @@ export {default as theme} from './theme'
 
 export default WhiteLayout
 
-# Simply React ⚛️
-
-Component patterns to simplify your reusable components...
-
-**Kent C. Dodds**
-
-<AboutMe />
+<FirstSlide
+  title="Simply React ⚛️"
+  subtitle="Component patterns to simplify your reusable components..."
+/>
 
 ---
 
@@ -45,7 +44,7 @@ export default WhiteLayout
 
 # What this talk is
 
-- Typical component lifecycle example <small>(not what you're thinking)</small>
+- Typical component lifecycle example <br /><small>(not what you're thinking)</small>
 - How patterns can simplify
 - Composability
 - A challenge
@@ -72,10 +71,29 @@ export default WhiteLayout
 
 export default DemoLayout
 
-<DemoSlide
-  code={`<Accordion items={accordionItems} />`}
-  accordion={<Accordions.Standard />}
-/>
+<Appear>
+  <DemoSlide
+    code={`<Accordion items={accordionItems} />`}
+    accordion={<Accordions.Standard />}
+  />
+  <div>
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 30,
+        left: 0,
+        width: '100vw',
+        textAlign: 'center',
+        borderRadius: 6,
+        padding: 4,
+        backgroundColor: 'rgba(1,22,39, 0.6)',
+      }}
+    >
+      <div>Theme: Night Owl by Sarah Drasner</div>
+      <div>Font: Dank Mono by Phil Plückthun</div>
+    </div>
+  </div>
+</Appear>
 
 ---
 
@@ -232,22 +250,91 @@ What if this is all you will ever need?
 # YAGNI
 
 <small>You Ain't Gonna Need It</small>
-
-<img style={{display: 'block', maxWidth: '100%', margin: 'auto'}} src="public/cost-benefits.jpg" />
-
-**Optimize for deletability**
-
+<Appear>
+  <div>
+    <strong style={{fontSize: '2em'}}>Optimize for deletability</strong>
+  </div>
+  <div>
+    <video style={{display: 'block', maxWidth: '100%', margin: 'auto'}} autoPlay playsInline loop muted src="public/erased-from-existence.mp4" />
+  </div>
+</Appear>
 ---
 
 # Use patterns that _simplify_ your API
 
 <Appear>
-  <div>state reducers</div>
-  <div>control props</div>
-  <div>providers</div>
-  <div>compound components</div>
-  <div>render props</div>
-  <div>Let's (re)discover more!</div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(20deg)',
+        top: '30%',
+        left: '20%'
+      }}
+    >
+      state reducers
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(30deg)',
+        bottom: '10%',
+        left: '10%'
+      }}
+    >
+      control props
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(10deg)',
+        bottom: '30%',
+        right: '20%'
+      }}
+    >
+      providers
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(-10deg)',
+        bottom: '10%',
+        right: '30%'
+      }}
+    >
+      compound components
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(-20deg)',
+        top: '10%',
+        left: '60%'
+      }}
+    >
+      render props
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        fontWeight: 'bold',
+        fontSize: '5rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      Let's (re)discover more!
+    </RandomlyPlaced>
+  </div>
 </Appear>
 
 ---
@@ -256,6 +343,6 @@ What if this is all you will ever need?
 
 <img width="70px" height="70px" src="public/standard/wave.png" />
 
-[kcd.im/simply-react](http://kcd.im/simply-react)
+[simply-react.netlify.com](https://simply-react.netlify.com)
 
 <img style={{width: 70, margin: -20}} src="public/standard/twitter.svg" /> <a href="https://twitter.com/kentcdodds">@kentcdodds</a>
