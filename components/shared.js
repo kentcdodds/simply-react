@@ -62,7 +62,7 @@ const TabButton = styled(AccordionButton)({
 })
 const TabItems = styled('div')({
   position: 'relative',
-  minHeight: 120,
+  minHeight: 160,
 })
 
 const BelowTabItem = posed.div({
