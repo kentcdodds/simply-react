@@ -4,7 +4,7 @@ import 'style-loader!css-loader!./styles.css'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/jsx/jsx'
 import './script.js'
-import {Appear} from 'mdx-deck'
+import {Appear, Notes} from 'mdx-deck'
 import {FirstSlide} from './components/first-slide'
 import {AboutMe} from './components/about-me'
 import * as Accordions from './components/accordion/implementations'
@@ -13,7 +13,7 @@ import {CodeBlock} from './components/code-block'
 import WhiteLayout from './components/white-layout'
 import {aprocalypse} from './components/aprocalypse'
 import {accordionCode} from './components/accordion-code'
-import {Sobbing} from './components/sob'
+import {Sobbing, Sob} from './components/sob'
 import {RandomlyPlaced} from './components/randomly-placed'
 import {DemoSlide} from './components/demo-slide'
 import DemoLayout from './components/demo-layout'
@@ -95,6 +95,14 @@ export default DemoLayout
   </div>
 </Appear>
 
+```notes
+- Following the lifecycle of an Accordion
+- Make it for your use case
+- Props API is pretty simple
+- Theme/Font shoutout
+- New Use Case: Above
+```
+
 ---
 
 export default DemoLayout
@@ -103,6 +111,11 @@ export default DemoLayout
   code={`<Accordion items={accordionItems} above={true} />`}
   accordion={<Accordions.Above />}
 />
+
+```notes
+- Just a few conditional statements (position, hand, animation)
+- New Use Case: Right
+```
 
 ---
 
@@ -113,6 +126,11 @@ export default DemoLayout
   accordion={<Accordions.Right />}
 />
 
+```notes
+- Refactor to use CSS Grid and use gridAutoFlow for column vs row
+- New Use Case: Left
+```
+
 ---
 
 export default DemoLayout
@@ -121,6 +139,11 @@ export default DemoLayout
   code={`<Accordion items={accordionItems} position="left" />`}
   accordion={<Accordions.Left />}
 />
+
+```notes
+- Refactor the props to use position because David K. Piano said impossible states is a no-no
+- New Use Case: Single
+```
 
 ---
 
@@ -137,6 +160,11 @@ export default DemoLayout
   accordion={<Accordions.Single />}
 />
 
+```notes
+- Some conditional logic in the click handler
+- New Use Case: Prevent Close
+```
+
 ---
 
 export default DemoLayout
@@ -151,6 +179,11 @@ export default DemoLayout
   `}
   accordion={<Accordions.PreventClose />}
 />
+
+```notes
+- Some additional conditional logic in the click handler
+- New Use Case: SinglePreventClose
+```
 
 ---
 
@@ -167,6 +200,11 @@ export default DemoLayout
   `}
   accordion={<Accordions.SinglePreventClose />}
 />
+
+```notes
+- Luckily no changes necessary!
+- But this looks familiar! New Use Case: Tabs
+```
 
 ---
 
@@ -185,6 +223,17 @@ export default DemoLayout
   accordion={<Tabs.Standard />}
 />
 
+```notes
+- Write tabs UI in a different method `renderTabs`
+- Cry!
+- New Use Case: Tabs Above
+```
+
+<Appear>
+  <img src="public/cry.png" />
+  <div />
+</Appear>
+
 ---
 
 export default DemoLayout
@@ -194,21 +243,59 @@ export default DemoLayout
   accordion={<Tabs.Above />}
 />
 
+<Appear>
+  <img src="public/sob.png" />
+  <div />
+</Appear>
+
+```notes
+- I don't want to maintain this anymore
+- Fork the component to make a tabs component
+- Sob
+```
+
 ---
 
 <CodeBlock>{aprocalypse}</CodeBlock>
 
 <Sobbing />
 
+```notes
+- Datepicker with 60 props
+- "Configuration Props" (objects with dozens of options, basically just more props)
+- "render" props: boolean props to control whether something is rendered
+- Bundle: Code you don't need
+- Maintenance: Documentation, answering questions
+- Implementation: Remembering use cases and not breaking things. Contributors.
+- API: Having to learn the growing API
+- APROPCALYPSE
+```
+
 ---
 
 <img style={{maxWidth: '100%'}} src="public/what-if.jpg" />
+
+```notes
+(notes for next slide...)
+- I might have manually changed the code post-prettier :)
+- Don't worry about the specific implementation details.
+- Two major patterns that allow this:
+  - stateReducer
+  - render props
+- Inversion of control patterns
+```
 
 ---
 
 export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div>
 
 <CodeBlock style={{fontSize: 14}}>{accordionCode}</CodeBlock>
+
+<!--
+  cannot have notes on this slide for some reason...
+  There's an infinite loop in React code and a warning
+  in the console about history...
+-->
 
 ---
 
@@ -218,6 +305,10 @@ export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div
 
 <small>Thank you Ives ❣️</small>
 
+```notes
+- Composition allows for the same simple API
+```
+
 ---
 
 # Resources
@@ -225,6 +316,10 @@ export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div
 <Resources />
 
 <img width="70px" height="70px" src="public/standard/books.png" />
+
+```notes
+- Advanced course available on Egghead.io and Frontend Masters
+```
 
 ---
 
@@ -258,6 +353,14 @@ What if this is all you will ever need?
     <video style={{display: 'block', maxWidth: '100%', margin: 'auto'}} autoPlay playsInline loop muted src="public/erased-from-existence.mp4" />
   </div>
 </Appear>
+
+```notes
+- Be mindful and intentional
+- Measure the costs and the benefits.
+- Optimize for deletability
+- Erased from existence!
+```
+
 ---
 
 # Use patterns that _simplify_ your API
@@ -336,6 +439,10 @@ What if this is all you will ever need?
     </RandomlyPlaced>
   </div>
 </Appear>
+
+```notes
+- Applying old principles (like composition and inversion of control)
+```
 
 ---
 
