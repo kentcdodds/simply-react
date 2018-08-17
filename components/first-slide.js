@@ -130,7 +130,10 @@ class AboutMe extends React.Component {
         <LogoRow>
           <LinkedIconImage link="http://kcd.im/egghead" name="eggheadio.png" />
           <LinkedIconImage link="http://kcd.im/fem" name="fem.png" />
-          <a href="https://twitter.com/kentcdodds" style={{fontSize: '2.2em'}}>
+          <a
+            href="https://twitter.com/kentcdodds"
+            style={{fontSize: '1.6em', color: '#1da1f2'}}
+          >
             @kentcdodds
           </a>
           <LinkedIconImage link="http://kcd.im/gde" name="gde.png" />
