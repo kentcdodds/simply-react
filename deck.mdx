@@ -75,22 +75,27 @@ export default DemoLayout
   code={`<Accordion items={accordionItems} />`}
   accordion={<Accordions.Standard />}
 />
-<div
-  style={{
-    fontSize: '0.8em',
-    position: 'absolute',
-    bottom: 50,
-    left: 0,
-    width: '100vw',
-    textAlign: 'center',
-    borderRadius: 6,
-    padding: 4,
-    backgroundColor: 'rgba(1,22,39, 0.6)',
-  }}
->
-  <div>Theme: Night Owl by Sarah Drasner</div>
-  <div>Font: Dank Mono by Phil Plückthun</div>
-</div>
+<Appear>
+  <div>
+    <div
+      style={{
+        fontSize: '0.8em',
+        position: 'absolute',
+        bottom: 50,
+        left: 0,
+        width: '100vw',
+        textAlign: 'center',
+        borderRadius: 6,
+        padding: 4,
+        backgroundColor: 'rgba(1,22,39, 0.6)',
+      }}
+    >
+      <div>Theme: Night Owl by Sarah Drasner</div>
+      <div>Font: Dank Mono by Phil Plückthun</div>
+    </div>
+  </div>
+  <div />
+</Appear>
 
 ```notes
 - Following the lifecycle of an Accordion
@@ -361,6 +366,21 @@ What if this is all you will ever need?
 - Optimize for deletability
 - Erased from existence!
 ```
+
+---
+
+export default WhiteLayout
+
+<img
+  style={{
+    width: 150,
+    marginBottom: 30,
+    letterSpacing: 1.5
+  }}
+  src="public/michael.jpg"
+/>
+
+<div><strong>LISTEN TO MICHAEL</strong></div>
 
 ---
 
