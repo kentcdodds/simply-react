@@ -25,9 +25,7 @@ function DemoSlide({accordion, followCode, code}) {
               {followCode.trim()}
             </CodeBlock>
           </div>
-        ) : (
-          <div />
-        )}
+        ) : null}
       </Appear>
     </div>
   )
