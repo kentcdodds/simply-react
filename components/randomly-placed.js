@@ -8,7 +8,7 @@ function RandomlyPlaced({children, style, ...props}) {
           style={{
             borderRadius: 6,
             padding: 4,
-            backgroundColor: 'rgba(1,22,39, 0.6)',
+            backgroundColor: 'rgba(1,22,39, 0.9)',
           }}
           {...props}
         >

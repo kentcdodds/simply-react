@@ -20,18 +20,8 @@ export default WhiteLayout
 
 <FirstSlide
   title="Simply React ⚛️"
-  subtitle="Why I love React Patterns so much"
+  subtitle="Make your React more flexible and simple at the same time"
 />
-
----
-
-export default WhiteLayout
-
-# Please Stand
-
-_If you are physically able ❤️ ♿️_
-
-<img width="70px" height="70px" src="public/standard/big-smile.png" />
 
 ---
 
@@ -39,7 +29,8 @@ export default WhiteLayout
 
 # What this talk is
 
-- Typical lifecycle of a component <br /><small>(not what you're thinking)</small>
+- Typical lifecycle of a component <br /><small>(not what you're
+  thinking)</small>
 - How patterns can simplify
 - Composability
 - A challenge
@@ -50,22 +41,13 @@ export default WhiteLayout
 
 export default WhiteLayout
 
-# What this talk is *not*
+# What this talk is _not_
 
 <div style={{fontSize: 40, textAlign: 'left'}}>
   <ul>
-    <li><strong>How</strong> to implement patterns</li>
-      <Appear>
-        <li><a href="https://github.com/kentcdodds/react-testing-library">react-testing-library</a></li>
-        <li><a href="https://github.com/kentcdodds/downshift">downshift</a></li>
-        <li><a href="https://github.com/kentcdodds/babel-plugin-macros">babel-plugin-macros</a></li>
-        <li>
-          <del>
-            <a href="https://github.com/paypal/glamorous/issues/419">glamorous</a>
-          </del>{' '}
-          <a href="https://emotion.sh">emotion</a>
-        </li>
-      </Appear>
+    <li>
+      <strong>How</strong> to implement patterns
+    </li>
   </ul>
 </div>
 
@@ -300,7 +282,9 @@ export default DemoLayout
 
 ---
 
-export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div>
+export default ({children}) => (
+  <div style={{overflow: 'scroll'}}>{children}</div>
+)
 
 <CodeBlock style={{fontSize: 14}}>{accordionCode}</CodeBlock>
 
@@ -314,7 +298,7 @@ export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div
 
 # Demo
 
-[Codesandbox](https://codesandbox.io/s/1qo7rylm14)
+[Codesandbox](https://codesandbox.io/s/simply-react-accordion-lvg59)
 
 <small>Thank you Ives ❣️</small>
 
@@ -324,15 +308,7 @@ export default ({children}) => <div style={{overflow: 'scroll'}}>{children}</div
 
 ---
 
-# Resources
-
 <Resources />
-
-<img width="70px" height="70px" src="public/standard/books.png" />
-
-```notes
-- Advanced course available on Egghead.io and Frontend Masters
-```
 
 ---
 
@@ -363,7 +339,14 @@ What if this is all you will ever need?
     <strong style={{fontSize: '2em'}}>Optimize for deletability</strong>
   </div>
   <div>
-    <video style={{display: 'block', maxWidth: '100%', margin: 'auto'}} autoPlay playsInline loop muted src="public/erased-from-existence.mp4" />
+    <video
+      style={{display: 'block', maxWidth: '100%', margin: 'auto'}}
+      autoPlay
+      playsInline
+      loop
+      muted
+      src="public/erased-from-existence.mp4"
+    />
   </div>
 </Appear>
 
@@ -377,26 +360,6 @@ What if this is all you will ever need?
 
 ---
 
-export default WhiteLayout
-
-<img
-  style={{
-    width: 150,
-    marginBottom: 30
-  }}
-  src="public/michael.jpg"
-/>
-
-<div><strong style={{letterSpacing: 1.5}}>LISTEN TO MICHAEL</strong></div>
-
-<p>
-  <strong>Hot Garbage: Clean Code is Dead</strong>
-  <br />
-  <a href="https://www.youtube.com/watch?v=-NP_upexPFg">https://youtu.be/-NP_upexPFg</a>
-</p>
-
----
-
 # Use patterns that _simplify_ your API
 
 <Appear>
@@ -404,8 +367,8 @@ export default WhiteLayout
     <RandomlyPlaced
       style={{
         transform: 'rotate(20deg)',
-        top: '30%',
-        left: '20%'
+        top: '20%',
+        left: '10%',
       }}
     >
       state reducers
@@ -416,7 +379,7 @@ export default WhiteLayout
       style={{
         transform: 'rotate(30deg)',
         bottom: '10%',
-        left: '10%'
+        left: '10%',
       }}
     >
       control props
@@ -426,11 +389,11 @@ export default WhiteLayout
     <RandomlyPlaced
       style={{
         transform: 'rotate(10deg)',
-        bottom: '30%',
-        right: '20%'
+        bottom: '70%',
+        right: '10%',
       }}
     >
-      providers
+      hook composition
     </RandomlyPlaced>
   </div>
   <div>
@@ -438,21 +401,10 @@ export default WhiteLayout
       style={{
         transform: 'rotate(-10deg)',
         bottom: '10%',
-        right: '30%'
+        right: '30%',
       }}
     >
       compound components
-    </RandomlyPlaced>
-  </div>
-  <div>
-    <RandomlyPlaced
-      style={{
-        transform: 'rotate(-20deg)',
-        top: '10%',
-        left: '60%'
-      }}
-    >
-      render props
     </RandomlyPlaced>
   </div>
   <div>
@@ -486,4 +438,6 @@ export default WhiteLayout
 
 [simply-react.netlify.com](https://simply-react.netlify.com)
 
-<img style={{width: 70, margin: -20}} src="public/standard/twitter.svg" /> <a href="https://twitter.com/kentcdodds">@kentcdodds</a>
+<img style={{width: 70, margin: -20}} src="public/standard/twitter.svg" /> <a href="https://twitter.com/kentcdodds">
+  @kentcdodds
+</a>

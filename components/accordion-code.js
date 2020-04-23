@@ -1,39 +1,25 @@
 export const accordionCode = `
-class Accordion extends React.Component {
-  static defaultProps = {
-    stateReducer: (state, changes) => changes,
-    onStateChange: () => {}
-  }
-  state = {openIndexes: [0]}
-  getState(state = this.state) {
-    return {openIndexes: this.props.openIndexes === undefined ? state.openIndexes : this.props.openIndexes}
-  }
-  internalSetState(changes, callback = () => {}) {
-    let allChanges
-    this.setState(state => {
-      const actualState = this.getState(state)
-      const changesObject = typeof changes === 'function' ? changes(actualState) : changes
-      allChanges = this.props.stateReducer(actualState, changesObject)
-      return allChanges
-    }, () => {
-      this.props.onStateChange(allChanges)
-      callback()
-    })
-  }
-  handleItemClick = index => {
-    this.internalSetState(state => {
-      const closing = state.openIndexes.includes(index)
-      return {
-        type: closing ? 'closing' : 'opening',
-        openIndexes: closing ? state.openIndexes.filter(i => i !== index) : [...state.openIndexes, index]
-      }
-    })
-  }
-  render() {
-    return this.props.children({
-      openIndexes: this.getState().openIndexes,
-      handleItemClick: this.handleItemClick
-    })
+const actionTypes = {toggle_index: 'toggle_index'}
+
+function accordionReducer(openIndexes, action) {
+  switch (action.type) {
+    case actionTypes.toggle_index: {
+      const closing = openIndexes.includes(action.index)
+      return closing
+        ? openIndexes.filter(i => i !== action.index)
+        : [...openIndexes, action.index]
+    }
+    default: {
+      throw new Error('Unhandled type in accordionReducer: ' + action.type)
+    }
   }
 }
+
+function useAccordion({reducer = accordionReducer} = {}) {
+  const [openIndexes, dispatch] = React.useReducer(reducer, [0])
+  const toggleIndex = index => dispatch({type: actionTypes.toggle_index, index})
+  return {openIndexes, toggleIndex}
+}
+
+export {useAccordion, accordionReducer, actionTypes}
 `.trim()
