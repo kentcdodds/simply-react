@@ -17,7 +17,7 @@ const items = [
     title: '🦏',
     contents: (
       <div>
-        Rhino skin maybe thick but it can be quite sensitive to sunburns and
+        Rhino skin may be thick but it can be quite sensitive to sunburns and
         insect bites which is why they like wallow so much – when the mud dries
         it acts as protection from the sunburns and insects.
       </div>
